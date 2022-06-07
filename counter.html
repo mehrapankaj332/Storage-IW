@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    
+    <button>Increase</button>
+    <button>Decrease</button>
+    
+</body>
+</html>
+
+
+
+<script>
+    
+let counter=localStorage.getItem("localcounter")||0;
+
+document.querySelector("h1+button").addEventListener("click",increment);
+document.querySelector("button+button").addEventListener("click",decrement);
+
+
+document.querySelector("h1").innerText=counter;
+
+function increment(){
+ counter++;
+ document.querySelector("h1").innerText=counter;
+ localStorage.setItem("localcounter",counter);
+
+}
+
+function decrement(){
+ counter--;
+ document.querySelector("h1").innerText=counter;
+ localStorage.setItem("localcounter",counter);
+}
+
+</script>
+
+<!-- Create a file counter.html
+Create 2 buttons increase and decrease and one h1
+On clicking the increase button the value of the counter should increase by 1
+On clicking the decrease button the value of the counter should decrease by 1
+Show the current counter value in the h1 tag
+The data should be saved in the localStorage with the key called "counter"
+On refresh the counter should show the data which was already there -->
